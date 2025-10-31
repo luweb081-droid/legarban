@@ -351,3 +351,34 @@ footer { background:#fff; color:#333; text-align:center; padding:25px 20px; bord
     text-align: center;
   }
 }
+.gallery-page {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.gallery-intro {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
