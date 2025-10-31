@@ -173,7 +173,7 @@ footer { background:#fff; color:#333; text-align:center; padding:25px 20px; bord
 /* RESPONSIVE */
 @media(max-width:768px){
   header { flex-direction:column; gap:10px; padding:15px; }
-  header h1 { font-size:1.6em; }
+  header h1 { font-size:1.3em; }
 
   header nav ul {
     flex-direction:row;
