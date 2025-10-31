@@ -173,7 +173,7 @@ footer { background:#fff; color:#333; text-align:center; padding:25px 20px; bord
 /* RESPONSIVE */
 @media(max-width:768px){
   header { flex-direction:column; gap:10px; padding:15px; }
-  header h1 { font-size:1.3em; }
+  header h1 { font-size:1.5em; }
 
   header nav ul {
     flex-direction:row;
@@ -194,4 +194,160 @@ footer { background:#fff; color:#333; text-align:center; padding:25px 20px; bord
   #menu, #reviews, #about, #gallery, #localisation, #contact { padding-top:30px; padding-bottom:30px; }
 
   .call-btn { display:flex; align-items:center; }
+}
+/* PAGE À PROPOS UNIFIÉE */
+.about-page {
+  padding: 60px 10%;
+  background-color: #fefdf9;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+}
+
+.about-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #2c2c2c;
+  text-align: left;
+}
+
+.about-text p {
+  font-size: 1.05em;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* ÉQUIPE */
+.team-section {
+  padding: 60px 10%;
+  text-align: center;
+  background: #fff;
+}
+.team-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.team-member {
+  max-width: 300px;
+  background: #fefdf9;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 20px;
+}
+.team-member img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.team-member h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 8px;
+  color: #2c2c2c;
+}
+.team-member p {
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* VALEURS */
+.values-section {
+  padding: 60px 10%;
+  background: #f3dbdb;
+  text-align: center;
+}
+.values-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #2c2c2c;
+}
+.values-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.value-item {
+  max-width: 250px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+.value-item:hover {
+  transform: translateY(-5px);
+}
+.value-item i {
+  color: #8b0000;
+  margin-bottom: 15px;
+}
+.value-item h3 {
+  font-family: 'Playfair Display', serif;
+  color: #2c2c2c;
+  margin-bottom: 10px;
+}
+.value-item p {
+  color: #555;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+/* FADE-IN - TOUJOURS VISIBLE AU LOAD */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE - À PROPOS */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-text h2 {
+    text-align: center;
+  }
+  .team-grid, .values-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-text p, .team-member p, .value-item p {
+    text-align: center;
+  }
 }
