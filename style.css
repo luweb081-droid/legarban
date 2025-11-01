@@ -69,24 +69,48 @@ header nav ul li a:hover { color:#8b0000; }
 #menu { padding:50px 20px; }
 #menu h2 { font-family:'Playfair Display', serif; text-align:center; margin-bottom:30px; }
 .menu-carousel { max-width:1000px; margin:0 auto; overflow:hidden; }
-.menu-track { display:flex; animation:scrollMenu 12s linear infinite; }
+.menu-track {
+  display:flex;
+  width: max-content; /* s’adapte à tous les items */
+  animation: scrollMenu 20s linear infinite; /* défilement fluide */
+}
 .menu-item {
-  min-width:300px;
+  flex: 0 0 auto;
+  width: 300px; /* desktop par défaut */
   margin:0 10px;
   background:#fff;
   border-radius:10px;
   box-shadow:0 4px 10px rgba(0,0,0,0.08);
   overflow:hidden;
   text-align:center;
-  flex-shrink:0;
 }
 .menu-item img { width:100%; height:180px; object-fit:cover; }
 .menu-item h3 { margin:15px 0 5px; font-size:1.2em; }
 .menu-item p { margin-bottom:15px; font-weight:bold; color:#8b0000; }
-@keyframes scrollMenu { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
+
+/* Animation infinie */
+@keyframes scrollMenu {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* 50% car on duplique le contenu dans le HTML */
+}
+
+/* Boutons */
 .menu-btn { text-align:center; margin-top:25px; }
 .btn-menu { display:inline-block; background:#8b0000; color:#fff; padding:12px 30px; border-radius:5px; text-decoration:none; font-weight:bold; transition:0.3s; }
 .btn-menu:hover { background:#a20000; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .menu-item { width: 200px; }
+}
+
+@media (max-width: 480px) {
+  .menu-item { width: 150px; }
+  .menu-item img { height:120px; }
+  .menu-item h3 { font-size:1em; }
+  .menu-item p { font-size:0.9em; }
+}
+
 
 /* GALERIE */
 #gallery { padding:50px 20px; }

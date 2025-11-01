@@ -1,37 +1,41 @@
 // --- MENU CAROUSEL AUTO INFINI --- //
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".menu-track");
+  if (!track) return;
+
+  const items = Array.from(track.children);
+  const total = items.length;
   let index = 0;
-  const itemWidth = 320; // largeur d’un élément
-  const interval = 3000; // temps entre chaque défilement (en ms)
+  const interval = 3000; // durée entre chaque slide
+  let itemWidth = items[0].offsetWidth;
 
-  if (track) {
-    const items = document.querySelectorAll(".menu-item");
-    const total = items.length;
+  // --- CLONAGE pour boucle infinie ---
+  track.innerHTML += track.innerHTML; // duplique tout le contenu
+  track.style.display = "flex";
+  track.style.transition = "transform 0.5s ease";
 
-    // Cloner le premier élément pour rendre la boucle fluide
-    const firstClone = items[0].cloneNode(true);
-    track.appendChild(firstClone);
+  // --- AUTO défilement ---
+  setInterval(() => {
+    itemWidth = items[0].offsetWidth; // recalcul si responsive
+    index++;
+    track.style.transform = `translateX(-${index * itemWidth}px)`;
 
-    setInterval(() => {
-      index++;
-      track.style.transition = "transform 0.6s ease";
-      track.style.transform = `translateX(-${index * itemWidth}px)`;
-
-      // Quand on atteint la fin (clone), on revient instantanément au début
-      if (index === total) {
+    // Quand on arrive à la fin du premier bloc, reset fluide
+    if (index >= total) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        track.style.transform = "translateX(0)";
+        index = 0;
+        // réactive la transition
         setTimeout(() => {
-          track.style.transition = "none";
-          track.style.transform = "translateX(0)";
-          index = 0;
-        }, 600); // temps de la transition
-      }
-    }, interval);
-  }
+          track.style.transition = "transform 0.5s ease";
+        }, 50);
+      }, 500);
+    }
+  }, interval);
 
   // --- FADE-IN --- //
   const fadeEls = document.querySelectorAll(".fade-in");
-
   function handleFadeIn() {
     fadeEls.forEach((el) => {
       const rect = el.getBoundingClientRect();
