@@ -1,34 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // --------------------------
+  // CARROUSEL MENU (PC + MOBILE)
+  // --------------------------
   const track = document.querySelector(".menu-track");
-  if (!track) return;
+  if (track) { // seulement si on est sur une page avec le carrousel
 
-  // --- DUPLICATION POUR BOUCLE INFINIE ---
-  track.innerHTML += track.innerHTML; // duplique tout le contenu
+    // Dupliquer pour boucle infinie fluide
+    track.innerHTML += track.innerHTML;
 
-  let position = 0;
-  const speed = 0.5; // ajustable, plus lent pour mobile
+    let position = 0;
+    const speed = 0.5; // ajustable pour vitesse
 
-  function animate() {
-    position += speed;
+    function animate() {
+      position += speed;
 
-    // Largeur totale de la moitié du contenu
-    const totalWidth = track.scrollWidth / 2;
+      const totalWidth = track.scrollWidth / 2; // moitié du contenu dupliqué
 
-    // Reset pour boucle infinie
-    if (position >= totalWidth) {
-      position = position % totalWidth;
+      // Reset fluide
+      if (position >= totalWidth) {
+        position -= totalWidth;
+      }
+
+      track.style.transform = `translateX(-${position}px)`;
+      requestAnimationFrame(animate);
     }
 
-    track.style.transform = `translateX(-${position}px)`;
-    requestAnimationFrame(animate);
+    animate();
   }
 
-  animate();
-
-  // --- FADE-IN ---
+  // --------------------------
+  // FADE-IN pour toutes les pages
+  // --------------------------
   const fadeEls = document.querySelectorAll(".fade-in");
+
   function handleFadeIn() {
-    fadeEls.forEach((el) => {
+    fadeEls.forEach(el => {
       const rect = el.getBoundingClientRect();
       if (rect.top < window.innerHeight - 100) {
         el.classList.add("visible");
@@ -39,8 +46,4 @@ document.addEventListener("DOMContentLoaded", () => {
   handleFadeIn();
   window.addEventListener("scroll", handleFadeIn);
 
-  // --- Ajustement si redimensionnement ---
-  window.addEventListener("resize", () => {
-    location.reload(); // recalcul des largeurs pour l'animation
-  });
 });

@@ -84,12 +84,7 @@ header nav ul li a:hover { color:#8b0000; }
   position: relative;
 }
 
-.menu-track {
-  display: flex;
-  gap: 10px;
-  /* Animation pour PC uniquement */
-  animation: scrollMenu 20s linear infinite;
-}
+
 
 /* Items */
 .menu-item {
