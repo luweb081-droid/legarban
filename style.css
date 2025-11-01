@@ -61,7 +61,7 @@ header nav ul li a:hover { color:#8b0000; }
   justify-content:center;
   padding:40px 0;
 }
-#about .about-text { max-width:900px; padding:0 20px; text-align:center; }
+#about .about-text { max-width:900px; padding:0 40px; text-align:center; }
 #about h2 { font-family:'Playfair Display', serif; margin-bottom:15px; text-align:center; }
 #about p { text-align:justify; margin-bottom:10px; }
 
@@ -279,9 +279,9 @@ footer { background:#fff; color:#333; text-align:center; padding:25px 20px; bord
 
   .call-btn { display:flex; align-items:center; }
 }
-/* PAGE À PROPOS UNIFIÉE */
+/* PAGE À PROPOS CENTRÉE ET FULL-WIDTH */
 .about-page {
-  padding: 60px 10%;
+  padding: 60px 5%; /* padding horizontal léger */
   background-color: #fefdf9;
 }
 
@@ -289,37 +289,43 @@ footer { background:#fff; color:#333; text-align:center; padding:25px 20px; bord
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 40px;
-  justify-content: center;
+  justify-content: center; /* contenu centré horizontalement */
+  gap: 50px; /* espace entre image et texte */
+  width: 100%; /* prend toute la largeur de la page */
+  max-width: none; /* pas de limite */
+  margin: 0 auto; /* centrer le container */
+}
+
+.about-image {
+  flex: 1 1 40%; /* image flexible, prend jusqu'à 40% */
+  min-width: 300px; /* minimum pour mobile */
 }
 
 .about-image img {
-  width: 100%;
-  max-width: 500px;
+  width: 100%; /* image prend tout son conteneur */
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .about-text {
-  flex: 1;
-  min-width: 280px;
-  max-width: 600px;
+  flex: 1 1 50%; /* texte flexible, prend jusqu'à 50% */
+  min-width: 300px;
+  text-align: center; /* centré horizontalement */
 }
 
 .about-text h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.2em;
-  margin-bottom: 20px;
+  font-size: 2.4em;
+  margin-bottom: 25px;
   color: #2c2c2c;
-  text-align: left;
 }
 
 .about-text p {
-  font-size: 1.05em;
+  font-size: 1.1em;
   color: #555;
-  line-height: 1.7;
-  margin-bottom: 15px;
-  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  text-align: center; /* texte centré */
 }
 
 /* ÉQUIPE */
