@@ -308,7 +308,7 @@ footer { background:#fff; color:#333; text-align:center; padding:25px 20px; bord
 }
 
 .about-text {
-  flex: 1 1 50%; /* texte flexible, prend jusqu'à 50% */
+  flex: 50%; /* texte flexible, prend jusqu'à 50% */
   min-width: 300px;
   text-align: center; /* centré horizontalement */
 }
