@@ -472,3 +472,22 @@ footer { background:#fff; color:#333; text-align:center; padding:25px 20px; bord
 .gallery-item img:hover {
   transform: scale(1.05);
 }
+
+/* Taille uniforme pour tous les titres principaux */
+h1, h2 {
+  font-size: 2.5em; /* titres principaux plus grands */
+}
+
+h3 {
+  font-size: 2em; /* sous-titres légèrement plus petits */
+}
+
+/* Ajustement responsive pour mobile */
+@media (max-width: 768px) {
+  h1, h2 {
+    font-size: 2em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+}
