@@ -7,21 +7,21 @@
 
   <!-- Page d'accueil -->
   <url>
-    <loc>https://ton-site.netlify.app/</loc>
+    <loc>https://legarban.netlify.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Page À propos -->
   <url>
-    <loc>https://ton-site.netlify.app/apropos.html</loc>
+    <loc>https://legarban.netlify.app/apropos.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Exemple : autre page (menu, contact, etc.) -->
   <url>
-    <loc>https://ton-site.netlify.app/galerie.html</loc>
+    <loc>https://legarban.netlify.app/galerie.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
